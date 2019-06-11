@@ -26,5 +26,16 @@ router.get('/', (req, res) => {
   res.json({ message: 'API is Working!' });
 })
 
+router.get('/data', (req, res) => {
+  res.send({
+    status: 'ok',
+    statusCode: 200,
+    body: {
+      name: 'Andreas',
+      description: 'API Response'
+    }
+  })
+})
+
 app.listen(port);
 console.log('Server listening on port ' + port);
