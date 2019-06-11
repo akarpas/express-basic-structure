@@ -17,7 +17,14 @@ const router = express.Router();
 
 app.use('/api/v1', router);
 
+router.use((req, res, next) => {
+  console.log('FYI... There is some processing currently going down...');
+  next();
+});
+
 router.get('/', (req, res) => {
   res.json({ message: 'API is Working!' });
 })
 
+app.listen(port);
+console.log('Server listening on port ' + port);
