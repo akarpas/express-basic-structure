@@ -11,3 +11,13 @@ app.use(bodyParser.json());
 
 const port = process.env.PORT || DEFAULT_PORT;
 
+// Set router
+
+const router = express.Router();
+
+app.use('/api/v1', router);
+
+router.get('/', (req, res) => {
+  res.json({ message: 'API is Working!' });
+})
+
